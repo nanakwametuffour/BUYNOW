@@ -12,7 +12,7 @@ export default function TopSlider() {
         },
         tablet: {
           breakpoint: { max: 1024, min: 464 },
-          items: 2,
+          items: 3,
           slidesToSlide: 2, // optional, default to 1.
         },
         mobile: {
@@ -35,7 +35,7 @@ export default function TopSlider() {
         transitionDuration={1000}
       >
         {all_products?.map((item) => (
-          <div className=" p-5 flex items-center justify-center">
+          <div key={item.id} className=" p-5 flex items-center justify-center">
             <div className="flex justify-center items-center gap-1 border  p-1 border-gray-300 rounded-lg px-3">
               <div className="flex  justify-center items-center gap-1 px-3">
                 <img
@@ -43,7 +43,7 @@ export default function TopSlider() {
                   alt=""
                   className="h-10 w-10 rounded-full object-cover"
                 />
-                <p className=" whitespace-nowrap">{item.name}</p>
+                <p className=" whitespace-nowrap capitalize">{item.name}</p>
               </div>
             </div>
           </div>

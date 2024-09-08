@@ -21,7 +21,7 @@ export default function Header() {
     }
   return (
     <>
-      <header className="bg-white shadow-md sticky top-0 ">
+      <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="flex max-w-6xl mx-auto p-5 justify-between items-center">
           <div className="">
             <Link

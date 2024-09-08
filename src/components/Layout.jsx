@@ -5,11 +5,11 @@ import Sidebar from "./Sidebar"
 
 export default function Layout() {
   return (
-    <>
+    <div className="">
     
     <Header/>
     <Outlet/>
      <Footer/>
-    </>
+    </div>
   )
 }

@@ -4,16 +4,16 @@ import img3 from "../banner/img3.jpg";
 
 import img5 from "../banner/img5.webp";
 
-const barnner = [
+const banner = [
   {
     id: 1,
     image: img1,
   },
 
   {
-    id: 5,
+    id: 2,
     image: img5,
   },
 ];
 
-export default barnner;
+export default banner;
