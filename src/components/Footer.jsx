@@ -24,7 +24,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="text-white flex justify-center items-center flex-col">
-          <h1>Buy On Bestsuppliers.com</h1>
+          <h1>Buy On BUYNOW.com</h1>
           <div className="flex flex-col justify-center items-center">
             <Link>Send Inquiry</Link>
             <Link>Site Map</Link>
