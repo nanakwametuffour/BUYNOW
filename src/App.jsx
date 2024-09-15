@@ -6,6 +6,7 @@ import Watch from "./pages/Watch";
 import Phone from "./pages/Phone";
 import Earphone from "./pages/Earphone";
 import Airpode from "./pages/Airpode";
+import CartItem from "./components/CartItem";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
             <Route path="/phone" element={<Phone />} />
             <Route path="/earphone" element={<Earphone />} />
             <Route path="/airpode" element={<Airpode />} />
+            <Route path="/cart" element={<CartItem/>}/>
           </Route>
         </Routes>
       </BrowserRouter>

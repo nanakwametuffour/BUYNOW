@@ -4,21 +4,12 @@ import { FaHome, FaRegHeart } from "react-icons/fa";
 import { FiAlignRight } from "react-icons/fi";
 import { GiShoppingCart } from "react-icons/gi";
 import { Link } from "react-router-dom";
-import { setIsClose, setIsOpen } from "../redux/cart/cartSlice";
+import { setAddToCart, setIsClose, setIsOpen } from "../redux/cart/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function Header() {
-   const Open = useSelector((state)=>state.cartProduct.isOpen)
-      console.log(Open);
-      
-   const dispatch = useDispatch()
-    const toggleState=()=>{
-       if(Open){
-        dispatch(setIsOpen())
-       }else{
-        dispatch(setIsClose())
-       }
-    }
+  const products = useSelector((state) => state.cart.product);
+    
   return (
     <>
       <header className="bg-white shadow-md sticky top-0 z-50">
@@ -79,12 +70,12 @@ export default function Header() {
                   <Link to={"/cart"}>
                     <GiShoppingCart className="text-3xl" />
                     <span className=" absolute right-0 left-2 bottom-5 bg-red-700 w-5 h-5 rounded-full flex justify-center items-center text-white text-sm">
-                      0
+                      {products.length > 0 ? products.length : 0}
                     </span>
                   </Link>
                 </div>
               </div>
-              <FiAlignRight onClick={toggleState} className="text-3xl sm:block lg:hidden" />
+              <FiAlignRight className="text-3xl sm:block lg:hidden" />
             </div>
           </div>
         </div>
