@@ -19,9 +19,11 @@ export const cartSlice = createSlice({
         state.product.push(action.payload);
       }
     },
-    setIsOpen: (state, action) => {},
-    setIsClose: (state, action) => {
-      state.isOpen = action.payload;
+    setIsOpen: (state) => {
+      state.isOpen = true;
+    },
+    setIsClose: (state) => {
+      state.isOpen = false;
     },
      incrementQty:(state, action)=>{
       const item = state.product.find((item)=>item.id === action.payload)

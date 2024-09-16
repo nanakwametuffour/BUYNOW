@@ -6,12 +6,17 @@ import { GiShoppingCart } from "react-icons/gi";
 import { Link } from "react-router-dom";
 import { setAddToCart, setIsClose, setIsOpen } from "../redux/cart/cartSlice";
 import { useDispatch, useSelector } from "react-redux";
+import Sidebar from "./Sidebar";
 
 export default function Header() {
+  const dispatch = useDispatch()
   const products = useSelector((state) => state.cart.product);
-    
+     const sideBarToggle =()=>{
+        dispatch(setIsOpen())
+     }
   return (
     <>
+     <Sidebar/>
       <header className="bg-white shadow-md sticky top-0 z-50">
         <div className="flex max-w-6xl mx-auto p-5 justify-between items-center">
           <div className="">
@@ -75,7 +80,7 @@ export default function Header() {
                   </Link>
                 </div>
               </div>
-              <FiAlignRight className="text-3xl sm:block lg:hidden" />
+              <FiAlignRight onClick={sideBarToggle} className="text-3xl sm:block lg:hidden" />
             </div>
           </div>
         </div>
