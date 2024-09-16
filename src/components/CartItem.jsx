@@ -3,7 +3,7 @@ import { FaPlus } from "react-icons/fa6";
 import { useDispatch, useSelector } from "react-redux";
 import Empty from "./Empty";
 import { useEffect, useState } from "react";
-import { deleteItem, resetItem } from "../redux/cart/cartSlice";
+import { decrementQty, deleteItem, incrementQty, resetItem } from "../redux/cart/cartSlice";
  
 export default function CartItem() {
   const dispatch = useDispatch()
@@ -55,12 +55,12 @@ export default function CartItem() {
 
                     <div className="flex items-center w-full gap-3">
                       <p>qty:</p>
-                      <button className="bg-black text-white p-1 rounded-full">
+                      <button onClick={()=>dispatch(decrementQty(item.id))} className="bg-black text-white p-1 rounded-full">
                         <FaMinus />
                       </button>
 
                       <span className=" text-2xl">{item.quantity}</span>
-                      <button className="bg-black text-white p-1 rounded-full">
+                      <button onClick={()=>dispatch(incrementQty(item.id))} className="bg-black text-white p-1 rounded-full">
                         <FaPlus />
                       </button>
                     </div>
